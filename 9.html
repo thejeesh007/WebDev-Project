@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products You WANT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .header {
+            background-color: #ff5722;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-icon {
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        .cart-icon {
+            background-color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .search-section {
+            background-color: #e0e0e0;
+            padding: 2rem;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .search-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        .search-section span {
+            color: #ff5722;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 0.5rem;
+            border-radius: 25px;
+            max-width: 300px;
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            padding: 0.5rem;
+            width: 100%;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .footer {
+            background: white;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #ff5722;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="menu-icon">☰</div>
+        <div class="cart-icon">🛒</div>
+    </header>
+
+    <section class="search-section">
+        <h2>Products <span>You WANT</span></h2>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <span>🔍</span>
+        </div>
+    </section>
+
+    <main class="card-container">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2920&q=80" alt="Credit Score">
+            <div class="card-content">
+                <h3 class="card-title">Check your credit score for free</h3>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2920&q=80" alt="Mobile Recharge">
+            <div class="card-content">
+                <h3 class="card-title">10% Cash backs for every Mobile Recharges</h3>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1526738549149-8e07eca6c147?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2920&q=80" alt="Electronics">
+            <div class="card-content">
+                <h3 class="card-title">Sales on electronics</h3>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Help</h3>
+                <ul>
+                    <li><a href="#">Payment</a></li>
+                    <li><a href="#">Cancellation</a></li>
+                    <li><a href="#">History</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Phone No</h3>
+                <p>079-12345</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Socials</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📸</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

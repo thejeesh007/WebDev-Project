@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Shop</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background-color: #FF5722;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .search-container {
+            flex: 1;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+        }
+
+        .cart-container {
+            position: relative;
+        }
+
+        .cart-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: white;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -0.5rem;
+            right: -0.5rem;
+            background: white;
+            color: #FF5722;
+            font-size: 0.75rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Categories */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.5rem;
+            padding: 1rem;
+            background-color: #f5f5f5;
+        }
+
+        .category {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .category-icon {
+            background-color: #FFB5A0;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            width: 100%;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .category-icon img {
+            width: 1.5rem;
+            height: 1.5rem;
+            object-fit: cover;
+        }
+
+        .category span {
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+            text-align: center;
+        }
+
+        /* Products */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .product {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100%;
+            height: 8rem;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 0.5rem;
+        }
+
+        .product-info h3 {
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Promo Banner */
+        .promo-banner {
+            margin: 1rem;
+            padding: 1rem;
+            background-color: #fce7f3;
+            border-radius: 0.5rem;
+        }
+
+        .promo-banner h2 {
+            font-size: 1.125rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .promo-banner p {
+            font-size: 0.875rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f9fafb;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .footer-section h3 {
+            font-size: 0.875rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            font-size: 0.75rem;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.25rem;
+        }
+
+        .footer-section p {
+            font-size: 0.75rem;
+        }
+
+        .social-section {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .social-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <button class="close-btn">✕</button>
+            <div class="search-container">
+                <input type="search" placeholder="search products">
+            </div>
+            <div class="cart-container">
+                <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                </svg>
+                <span class="cart-badge">0</span>
+            </div>
+        </header>
+
+        <!-- Category Icons -->
+        <div class="categories">
+            <div class="category">
+                <div class="category-icon">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=50&h=50&fit=crop" alt="Mobiles">
+                </div>
+                <span>Mobiles</span>
+            </div>
+            <div class="category">
+                <div class="category-icon">
+                    <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=50&h=50&fit=crop" alt="Goods">
+                </div>
+                <span>Goods</span>
+            </div>
+            <div class="category">
+                <div class="category-icon">
+                    <img src="https://images.unsplash.com/photo-1585515320310-259814833e62?w=50&h=50&fit=crop" alt="Appliances">
+                </div>
+                <span>Appliances</span>
+            </div>
+            <div class="category">
+                <div class="category-icon">
+                    <img src="https://images.unsplash.com/photo-1512872726440-0ff4ee9366c0?w=50&h=50&fit=crop" alt="E-Scooters">
+                </div>
+                <span>E-Scooters</span>
+            </div>
+            <div class="category">
+                <div class="category-icon">
+                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=50&h=50&fit=crop" alt="Flight Bookings">
+                </div>
+                <span>Flight Bookings</span>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="products">
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=200&fit=crop" alt="Premium Headphones">
+                <div class="product-info">
+                    <h3>Premium Headphones</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1558089687-f282ffcbc126?w=300&h=200&fit=crop" alt="24bit Audio Device">
+                <div class="product-info">
+                    <h3>24bit Audio Device</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=300&h=200&fit=crop" alt="Wireless Earbuds">
+                <div class="product-info">
+                    <h3>Wireless Earbuds</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=300&h=200&fit=crop" alt="Hot Game Controllers">
+                <div class="product-info">
+                    <h3>Hot Game Controllers</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Valentine's Day Banner -->
+        <div class="promo-banner">
+            <h2>Valentine's Day</h2>
+            <p>Offers from today to February, grab ur product soon and enjoy fun!</p>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Help</h3>
+                    <ul>
+                        <li>Payment</li>
+                        <li>Cancellation</li>
+                        <li>History</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Phone No</h3>
+                    <p>079-12345</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li>About Us</li>
+                        <li>Blog</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="social-section">
+                <h3>Socials</h3>
+                <div class="social-icons">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                    </svg>
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: #FF5722;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .back-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .search-bar {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .profile-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: white;
+        }
+
+        main {
+            padding: 2rem;
+            flex: 1;
+        }
+
+        h2 {
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            background: #f0f0f0;
+            border-radius: 4px;
+        }
+
+        .name-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .hint {
+            display: block;
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 0.3rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: #FF5722;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            background: #f4511e;
+        }
+
+        footer {
+            padding: 2rem;
+            background: #f9f9f9;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+            color: #666;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .name-group {
+                grid-template-columns: 1fr;
+            }
+            
+            footer {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="back-btn">✕</button>
+            <div class="search-bar">
+                <input type="search" placeholder="search for Contacts">
+                <img src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png" alt="profile" class="profile-icon">
+            </div>
+        </header>
+
+        <main>
+            <h2>Enter Your Details</h2>
+            
+            <form id="detailsForm">
+                <div class="form-group">
+                    <label>Enter PAN Number</label>
+                    <input type="text" id="panNumber" placeholder="PAN Number">
+                </div>
+
+                <div class="form-group">
+                    <label>Enter Aadhar</label>
+                    <input type="text" id="aadharNumber" placeholder="Aadhar Number">
+                </div>
+
+                <div class="name-group">
+                    <div class="form-group">
+                        <input type="text" id="firstName" placeholder="First Name">
+                        <span class="hint">As in PAN Card</span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="lastName" placeholder="Last Name">
+                        <span class="hint">As in PAN Card</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Get</button>
+            </form>
+        </main>
+
+        <footer>
+            <div class="footer-section">
+                <h3>Help</h3>
+                <ul>
+                    <li>Payment</li>
+                    <li>Cancellation</li>
+                    <li>History</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Phone No</h3>
+                <p>079-12345</p>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li>About Us</li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Socials</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Instagram</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('detailsForm');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const panNumber = document.getElementById('panNumber').value;
+                const aadharNumber = document.getElementById('aadharNumber').value;
+                const firstName = document.getElementById('firstName').value;
+                const lastName = document.getElementById('lastName').value;
+                
+                // Validate inputs
+                if (!panNumber || !aadharNumber || !firstName || !lastName) {
+                    alert('Please fill in all fields');
+                    return;
+                }
+                
+                // Here you can add your form submission logic
+                console.log({
+                    panNumber,
+                    aadharNumber,
+                    firstName,
+                    lastName
+                });
+            });
+            
+            // Back button functionality
+            document.querySelector('.back-btn').addEventListener('click', function() {
+                // Add your back navigation logic here
+                console.log('Back button clicked');
+            });
+        });
+    </script>
+</body>
+</html>

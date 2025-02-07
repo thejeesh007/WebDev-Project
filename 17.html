@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Statistics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: #FF5722;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .back-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .search-bar {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .profile-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: white;
+        }
+
+        main {
+            padding: 2rem;
+            flex: 1;
+        }
+
+        .time-filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background: #E9967A;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .filter-btn.active {
+            background: #FF5722;
+        }
+
+        .stats {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .amount {
+            font-size: 2rem;
+            color: #FF5722;
+            font-weight: bold;
+        }
+
+        .date {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .graph {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            height: 300px;
+            margin: 2rem 0;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .bar {
+            width: 40px;
+            background: #808080;
+            border-radius: 10px 10px 0 0;
+            position: relative;
+        }
+
+        .bar.active {
+            background: #FF5722;
+        }
+
+        .bar-label {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            padding: 2rem;
+            background: #f9f9f9;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+            color: #666;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            footer {
+                grid-template-columns: 1fr;
+            }
+            
+            .time-filters {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="back-btn">✕</button>
+            <div class="search-bar">
+                <input type="search" placeholder="search for Contacts">
+                <img src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png" alt="profile" class="profile-icon">
+            </div>
+        </header>
+
+        <main>
+            <div class="time-filters">
+                <button class="filter-btn active">Monthly</button>
+                <button class="filter-btn">Yearly</button>
+                <button class="filter-btn">Daily</button>
+            </div>
+
+            <div class="stats">
+                <div class="amount">$2018.67</div>
+                <div class="date">September 2024</div>
+            </div>
+
+            <div class="graph">
+                <div class="bar" style="height: 20%;">
+                    <span class="bar-label">April</span>
+                </div>
+                <div class="bar" style="height: 40%;">
+                    <span class="bar-label">May</span>
+                </div>
+                <div class="bar" style="height: 30%;">
+                    <span class="bar-label">June</span>
+                </div>
+                <div class="bar" style="height: 25%;">
+                    <span class="bar-label">July</span>
+                </div>
+                <div class="bar" style="height: 80%;">
+                    <span class="bar-label">Aug</span>
+                </div>
+                <div class="bar active" style="height: 100%;">
+                    <span class="bar-label">Sept</span>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-section">
+                <h3>Help</h3>
+                <ul>
+                    <li>Payment</li>
+                    <li>Cancellation</li>
+                    <li>History</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Phone No</h3>
+                <p>079-12345</p>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li>About Us</li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Socials</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Instagram</li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                });
+            });
+
+            // Back button functionality
+            document.querySelector('.back-btn').addEventListener('click', function() {
+                console.log('Back button clicked');
+            });
+        });
+    </script>
+</body>
+</html>

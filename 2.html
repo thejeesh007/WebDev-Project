@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in with Google</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .signin-container {
+            background-color: #333;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+            color: white;
+        }
+
+        .header {
+            margin-bottom: 2rem;
+        }
+
+        .header h2 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .google-text {
+            color: #4285f4;
+        }
+
+        .account-prompt {
+            margin-bottom: 1.5rem;
+        }
+
+        .account-prompt span {
+            color: #888;
+        }
+
+        .continue-text {
+            color: #ff4500;
+        }
+        .account-option {
+            margin: 1rem 0;
+            color: #888;
+            position: relative;
+        }
+        .account-option:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .account-avatar {
+            width: 40px;
+            height: 40px;
+            background-color: #666;
+            border-radius: 50%;
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .account-details {
+            flex-grow: 1;
+        }
+
+        .account-name {
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .account-email {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 1rem 0;
+            color: #888;
+            position: relative;
+        }
+        .divider::before,
+        .divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 45%;
+            height: 1px;
+            background-color: #666;
+        }
+
+        .divider::before {
+            left: 0;
+        }
+
+        .divider::after {
+            right: 0;
+        }
+
+        .phone-option {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem;
+            color: #4285f4;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .phone-option:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #666;
+        }
+
+        .footer a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="signin-container">
+        <div class="header">
+
+            <h2>Sign in with <span class="google-text">Google</span></h2>
+        </div>
+        <div class="account-option">
+            <div class="account-avatar">T</div>
+            <div class="account-details">
+                <div class="account-name">Thejeeshg</div>
+                <div class="account-email">thejeesh.g@gmail.com</div>
+            </div>
+        </div>
+        <div class="account-option">
+            <div class="account-avatar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+            </div>
+            <div class="account-details">
+                <div class="account-name">Use any other account</div>
+            </div>
+        </div>
+        <div class="divider">or</div>
+        <div class="phone-option">
+            Continue with Phone
+        </div>
+        <div class="footer">
+            <a href="#">Help</a>
+            <a href="#">Privacy</a>
+        </div>
+    </div>
+</body>
+</html>
