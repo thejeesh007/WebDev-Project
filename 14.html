@@ -31,6 +31,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            position: relative;
         }
 
         .close-btn {
@@ -73,6 +74,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
 
         .main-content {
@@ -169,14 +171,15 @@
         }
         .profile-dropdown {
             position: absolute;
-            top: 3.5rem;
-            right: 1rem;
+            top: 80%;
+            left: 70%;
             background: white;
             border: 1px solid #ddd;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             width: 150px;
-            padding: 0.5rem 0;
+            padding: 10px;
+            
         }
         .profile-dropdown ul {
             list-style: none;
@@ -217,15 +220,15 @@
             <div class="search-container">
                 <input type="text" class="search-input" placeholder="search for any Contacts">
             </div>
-            <button class="profile-btn">👤</button>
+            <button class="profile-btn" >👤</button>
+            <div class="profile-dropdown hidden">
+                <ul>
+                    <li><a href="#">View Profile</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>  
         </div>
-        <div class="profile-dropdown hidden">
-            <ul>
-                <li><a href="#">View Profile</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Logout</a></li>
-            </ul>
-        </div>  
         <div class="main-content">
             <h2 class="section-title">Bank Balance</h2>
             
