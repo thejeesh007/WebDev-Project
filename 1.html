@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,8 +9,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Arial, sans-serif;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       }
 
       body {
@@ -20,43 +18,45 @@
         align-items: center;
         min-height: 100vh;
         background-color: #d2f0fb;
+        padding: 20px;
+        flex-direction: column;
       }
 
       .form-container {
-        background-color: #333;
+        background-color: #fff;
         padding: 2rem;
-        border-radius: 8px;
+        border-radius: 12px;
         width: 100%;
-        max-width: 400px;
-        color: white;
+        max-width: 500px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        margin-top: 40px;
       }
 
       .form-header {
-        margin-bottom: 1.5rem;
-        display: flex;
-        align-items: center;
+        margin-bottom: 2rem;
+        text-align: center;
       }
 
-      .back-arrow {
-        color: white;
-        text-decoration: none;
-        margin-right: 1rem;
-        font-size: 1.2rem;
+      .form-header h2 {
+        font-size: 1.8rem;
+        color: #333;
+        font-weight: 600;
+        margin-bottom: 1rem;
       }
 
-      h2 {
-        font-size: 1.2rem;
-        font-weight: 500;
+      .form-header p {
+        font-size: 0.9rem;
+        color: #555;
       }
 
       .name-fields {
         display: flex;
-        gap: 1rem;
-        margin-bottom: 1rem;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
       }
 
       .input-group {
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
         width: 100%;
       }
 
@@ -64,71 +64,119 @@
         display: block;
         margin-bottom: 0.5rem;
         font-size: 0.9rem;
+        color: #666;
       }
 
       input {
         width: 100%;
-        padding: 0.75rem;
-        border: none;
-        border-radius: 4px;
+        padding: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        font-size: 1rem;
+        color: #333;
+        transition: all 0.3s ease;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #6a82fb;
+        background-color: #fff;
       }
 
       .continue-btn {
         width: 100%;
-        padding: 0.75rem;
-        background-color: #3674B5;
+        padding: 1rem;
+        background-color: #6a82fb;
         color: white;
         border: none;
-        border-radius: 4px;
-        font-size: 1rem;
+        border-radius: 8px;
+        font-size: 1.1rem;
         cursor: pointer;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
+        transition: background-color 0.3s ease;
       }
 
       .continue-btn:hover {
-        background-color: #578FCA;
+        background-color: #4f63d1;
       }
 
       .divider {
         text-align: center;
-        margin-bottom: 20px;
+        margin: 1.5rem 0;
         color: #888;
       }
 
       .social-btn {
         width: 100%;
-        padding: 0.75rem;
-        margin-bottom: 0.5rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
         background-color: transparent;
-        border: 1px solid #666;
-        border-radius: 4px;
-        color: white;
+        border: 1px solid #6a82fb;
+        border-radius: 8px;
+        color: #6a82fb;
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
+        font-size: 1rem;
+        transition: all 0.3s ease;
       }
-      .checkbox-group{
-        display:flex;
-        align-items: center;
-        margin-right: 70px;
-        margin-bottom: 5px;
-      }
-      .checkbox-group label{
-        white-space: nowrap;
-        margin-top: 4px;
-      }
+
       .social-btn:hover {
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(106, 130, 251, 0.1);
+      }
+
+      .checkbox-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .checkbox-group label {
+        color: #666;
+        font-size: 0.9rem;
+        margin-left: 0.5rem;
+      }
+
+      .already-account {
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .already-account a {
+        color: #6a82fb;
+        font-size: 1rem;
+        text-decoration: none;
+      }
+
+      .already-account a:hover {
+        text-decoration: underline;
+      }
+
+      .footer {
+        margin-top: 2rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      .footer a {
+        color: #6a82fb;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
       }
     </style>
   </head>
   <body>
     <div class="form-container">
       <div class="form-header">
-        <a href="#" class="back-arrow">←</a>
         <h2>Create an account</h2>
+        <p>Welcome! Let's get started by creating your account.</p>
       </div>
       <form>
         <div class="name-fields">
@@ -137,7 +185,7 @@
             <input
               type="text"
               id="firstName"
-              placeholder="Enter your First-Name"
+              placeholder="Enter your First Name"
               required
             />
           </div>
@@ -146,7 +194,8 @@
             <input
               type="text"
               id="lastName"
-              placeholder="Enter your Last-Name"
+              placeholder="Enter your Last Name"
+              required
             />
           </div>
         </div>
@@ -164,7 +213,7 @@
           <input
             type="password"
             id="password"
-            placeholder="Enter the password"
+            placeholder="Enter your Password"
             required
           />
         </div>
@@ -174,9 +223,17 @@
         </div>
         <button type="submit" class="continue-btn">Continue</button>
         <div class="divider">Or</div>
-        <button type="button" class="social-btn">Continue with Google</button>
-        <button type="button" class="social-btn">Continue with Phone</button>
+        <button type="button" class="social-btn" onclick="window.location.href='2.html'">Continue with Google</button>
+        <button type="button" class="social-btn" onclick="window.location.href='3.html'">Continue with Phone</button>
+
+        <div class="already-account">
+          <a href="login.html">Already have an account? Login</a>
+        </div>
       </form>
+    </div>
+
+    <div class="footer">
+      <p>By creating an account, you agree to our <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a>.</p>
     </div>
   </body>
 </html>
