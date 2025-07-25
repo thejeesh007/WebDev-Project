@@ -1,1 +1,2 @@
-#vit chennai
+This e-commerce application is designed to provide a complete online retail experience with a focus on usability, security, and scalability.
+The platform will feature a product catalog with intuitive filtering and search capabilities, allowing users to explore products by categories, price ranges, and ratings. Registered users can log in to their accounts, while new users can register or proceed as guests through the guest checkout option, ensuring flexibility and accessibility for all types of customers. This website also has additional features which will be mentioned in the later part of the document
